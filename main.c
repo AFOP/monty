@@ -16,13 +16,13 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		printf("Usage: %s file\n", argv[0]);
+		fprintf(stderr,"USAGE: %s file\n", argv[0]);
 		exit(EXIT_FAILURE);
 	}
 	fp = fopen(argv[1], "r");
 	if (fp == NULL)
 	{
-		printf("Error: Can't open file %s\n", argv[1]);
+		fprintf(stderr,"Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	do {
