@@ -32,6 +32,7 @@ void execute(stack_t **h, char *line, unsigned int line_number)
 			return;
 		}
 	}
+	free(line);
 	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, start_c);
 	exit(EXIT_FAILURE);
 }
