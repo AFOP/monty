@@ -28,13 +28,35 @@ void pint(stack_t **head, unsigned int l)
 	stack_t *h;
 	(void)l;
 
-	if (!head)
+	if (!head || !*head)
 	{
-		printf("L%d: can't pint, stack empty", l);
+		printf("L%d: can't pint, stack empty\n", l);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
 	h = *head;
 	printf("%d\n", h->n);
 }
+/**
+* pop - removes the top element of the stack
+* @h: pointer to head to stack
+* @l: value of the line
+* Return: pointer to new node or NULL
+*/
+void pop(stack_t **h, unsigned int l)
+{
+	stack_t *nodo;
 
+	if (!h || !*h)
+	{
+		printf("L%d: can't pint, stack empty\n", l);
+		free_stack(*h);
+		exit(EXIT_FAILURE);
+	}
+	nodo = remove_node(h);
+	if (nodo == NULL)
+	{
+		free_stack(*h);
+		exit(EXIT_FAILURE);
+	}
+}

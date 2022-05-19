@@ -39,6 +39,8 @@ void push(stack_t **h, char *line, unsigned int line_number);
 stack_t *add_node(stack_t **h, const int n);
 void pall(stack_t **head, unsigned int l);
 void pint(stack_t **head, unsigned int l);
+void pop(stack_t **h, unsigned int l);
+stack_t *remove_node(stack_t **h);
 char *skip_spaces(char *s);
 char *reach_number(char *s);
 void free_stack(stack_t *h);

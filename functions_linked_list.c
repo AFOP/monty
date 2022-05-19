@@ -1,10 +1,10 @@
 #include "monty.h"
 /**
- * add_node - push or enqueue an element at the beginning of the stack
- * @h: pointer to head to stack
- * @n: value to add
- * Return: pointer to new node or NULL
- */
+* add_node - push or enqueue an element at the beginning of the stack
+* @h: pointer to head to stack
+* @n: value to add
+* Return: pointer to new node or NULL
+*/
 stack_t *add_node(stack_t **h, const int n)
 {
 	stack_t *new;
@@ -24,4 +24,28 @@ stack_t *add_node(stack_t **h, const int n)
 		(*h)->prev = new;
 	*h = new;
 	return (new);
+}
+/**
+* remove_node - remove node of the stack
+* @h: pointer to head to stack
+* Return: pointer to new node or NULL
+*/
+stack_t *remove_node(stack_t **h)
+{
+	stack_t *temp;
+
+	if (!h)
+		return (NULL);
+	temp = *h;
+	if (temp->next == NULL && temp->prev == NULL)
+	{
+		*h = NULL;
+		free(temp);
+		return (NULL);
+	}
+	(*h) = (*h)->next;
+	temp->next = NULL;
+	(*h)->prev = NULL;
+	free(temp);
+	return (temp);
 }
