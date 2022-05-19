@@ -38,6 +38,7 @@ void execute(stack_t **h, char *line, unsigned int line_number);
 void push(stack_t **h, char *line, unsigned int line_number);
 stack_t *add_node(stack_t **h, const int n);
 void pall(stack_t **head, unsigned int l);
+void pint(stack_t **head, unsigned int l);
 char *skip_spaces(char *s);
 char *reach_number(char *s);
 void free_stack(stack_t *h);

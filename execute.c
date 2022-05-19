@@ -9,6 +9,7 @@ void execute(stack_t **h, char *line, unsigned int line_number)
 {
 	instruction_t instr[] = {
 		{"pall", pall},
+		{"pint", pint},
 		{NULL, NULL}};
 	char *start_c;
 	int i;
