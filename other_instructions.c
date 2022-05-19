@@ -49,14 +49,16 @@ void pop(stack_t **h, unsigned int l)
 
 	if (!h || !*h)
 	{
-		printf("L%d: can't pint, stack empty\n", l);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", l);
 		free_stack(*h);
 		exit(EXIT_FAILURE);
 	}
 	nodo = remove_node(h);
 	if (nodo == NULL)
 	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", l);
 		free_stack(*h);
+		free(nodo);
 		exit(EXIT_FAILURE);
 	}
 }

@@ -34,22 +34,18 @@ stack_t *remove_node(stack_t **h)
 {
 	stack_t *temp;
 
-	if (!h)
-		return (NULL);
-	temp = *h;
-	if (temp->next == NULL && temp->prev == NULL)
+	if ((*h)->next == NULL && (*h)->prev == NULL)
+		(*h) = NULL;
+	else 
 	{
-		*h = NULL;
-		free(temp);
-		return (NULL);
+		temp = *h;
+		if ((*h)->next->next || (*h)->next)
+		{
+			(*h) = (*h)->next;
+			(*h)->prev = NULL;
+		}
+		temp->next = NULL;
 	}
-	if ((*h)->next->next)
-	{
-		(*h) = (*h)->next;
-		(*h)->prev = NULL;
-	}
-	temp->next = NULL;
-	free(temp);
-	
+		
 	return (temp);
 }
