@@ -27,3 +27,16 @@ void push(stack_t **h, char *line, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 }
+/**
+* pall - print all the elements as numbers
+* @head: double pointer to head
+* @l: line number
+*/
+void nop(stack_t **head , unsigned int l)
+{
+	(void)head;
+	
+	if (l > 0)
+		l--;
+	l = 0; 
+}

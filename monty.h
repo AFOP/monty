@@ -42,6 +42,7 @@ void pint(stack_t **head, unsigned int l);
 void pop(stack_t **h, unsigned int l);
 void swap(stack_t **h, unsigned int l);
 void add(stack_t **h, unsigned int l);
+void nop(stack_t **h, unsigned int l);
 stack_t *remove_node(stack_t **h);
 char *skip_spaces(char *s);
 char *reach_number(char *s);

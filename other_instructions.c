@@ -1,9 +1,9 @@
 #include "monty.h"
 /**
- * pall - print all the elements as numbers
- * @head: double pointer to head
- * @l: line number
- */
+* pall - print all the elements as numbers
+* @head: double pointer to head
+* @l: line number
+*/
 void pall(stack_t **head, unsigned int l)
 {
 	stack_t *h;
@@ -19,10 +19,10 @@ void pall(stack_t **head, unsigned int l)
 	}
 }
 /**
- * pint - prints the value at the top of the stack
- * @head: double pointer to head
- * @l: line number
- */
+* pint - prints the value at the top of the stack
+* @head: double pointer to head
+* @l: line number
+*/
 void pint(stack_t **head, unsigned int l)
 {
 	stack_t *h;

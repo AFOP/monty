@@ -13,11 +13,13 @@ void execute(stack_t **h, char *line, unsigned int line_number)
 		{"pop", pop},
 		{"swap", swap},
 		{"add", add},
+		{"nop", nop},
 		{NULL, NULL}};
 	char *start_c;
 	int i;
 
 	start_c = skip_spaces(line);
+
 	if (start_c == NULL)
 		return;
 	if (strncmp(start_c, "push", strlen("push")) == 0)
@@ -34,4 +36,5 @@ void execute(stack_t **h, char *line, unsigned int line_number)
 			return;
 		}
 	}
+	
 }
