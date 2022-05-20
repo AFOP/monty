@@ -28,11 +28,12 @@ char *reach_number(char *s)
 {
 	if (!s)
 		return (NULL);
-
+	
 	while (*s && (*s < '0' || *s > '9'))
-		s++;
+		++s;
 
 	if (*s == '\0')
 		return (NULL);
+
 	return (s);
 }

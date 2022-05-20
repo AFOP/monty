@@ -11,6 +11,8 @@ void execute(stack_t **h, char *line, unsigned int line_number)
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
+		{"swap", swap},
+		{"add", add},
 		{NULL, NULL}};
 	char *start_c;
 	int i;
