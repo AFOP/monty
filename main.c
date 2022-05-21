@@ -25,18 +25,20 @@ int main(int argc, char **argv)
 		fprintf(stderr,"Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	do {
+	while (status >= 0) 
+	{
 		line_c = NULL;
 		size_l = 0;
 		status = getline(&line_c, &size_l, fp);
+		
 		if (status > 0)
 		{
 			line_number++;
 			execute(&h, line_c, line_number);
 		}
-		else
-			free(line_c);
-	} while (status >= 0);
+		
+	}
+	free(line_c);
 	fclose(fp);
 	free_stack(h);
 	return (0);

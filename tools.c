@@ -7,15 +7,21 @@
  */
 char *skip_spaces(char *s)
 {
+	char *copy, *token;
+
 	if (!s)
 		return (NULL);
 
 	while (*s && *s == ' ')
 		++s;
-	if (*s == '\0') /*empty string*/
+  
+	if ((*s) == '\t' || (*s) == '\n' || (*s) == '\0')
+	{ 
 		return (NULL);
-
-	return (s);
+	}                           
+	copy = strdup(s);                    
+	token = strtok(copy, " ");
+	return (token);
 }
 
 /**
@@ -26,14 +32,20 @@ char *skip_spaces(char *s)
  */
 char *reach_number(char *s)
 {
+	char *num;
+
 	if (!s)
 		return (NULL);
 	
-	while (*s && (*s < '0' || *s > '9'))
-		++s;
+	num = strtok(s, " ");
+	num = strtok(NULL, " ");
 
-	if (*s == '\0')
+	while (*num && (*num < '0' || *num > '9'))
+		++num;  
+
+	if ((*num) == '\n' || (*num) == '\0')
+	{ 
 		return (NULL);
-
-	return (s);
+	}
+	return (num);
 }

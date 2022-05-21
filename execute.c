@@ -8,33 +8,44 @@
 void execute(stack_t **h, char *line, unsigned int line_number)
 {
 	instruction_t instr[] = {
-		{"pall", pall},
-		{"pint", pint},
-		{"pop", pop},
-		{"swap", swap},
-		{"add", add},
-		{"nop", nop},
-		{NULL, NULL}};
+		{"pall", pall}, {"pint", pint},
+		{"pop", pop}, {"swap", swap},
+		{"add", add}, {"nop", nop},
+		{NULL, NULL}
+	};
+	int i;	
 	char *start_c;
-	int i;
-
-	start_c = skip_spaces(line);
-
+		
+	start_c = strtok(line, " \n\t");
+	printf("Error");
+	printf("%s", start_c);
 	if (start_c == NULL)
+	{
+		free(line);
 		return;
-	if (strncmp(start_c, "push", strlen("push")) == 0)
+	}
+	if (strcmp(start_c, "push") == 0)
 	{
 		push(h, line, line_number);
 		return;
 	}
-	for (i = 0; instr[i].opcode; i++)
+	else
 	{
-		if (strncmp(start_c, instr[i].opcode, strlen(instr[i].opcode)) == 0)
+		for (i = 0; instr[i].opcode != NULL; i++)
 		{
-			free(line);
-			(instr[i].f)(h, line_number);
-			return;
+			
+			if (strcmp(start_c, instr[i].opcode) == 0)
+			{
+				
+				free(line);
+				instr[i].f(h, line_number);
+				return;
+			}
 		}
 	}
-	
+	fprintf(stderr,"L%d: unknown instruction %s\n", line_number, start_c);
+	free(line);
+	free_stack(*h);
+	*h = NULL;
+	exit(EXIT_FAILURE);
 }

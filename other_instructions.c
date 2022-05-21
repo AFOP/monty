@@ -49,7 +49,7 @@ void pop(stack_t **h, unsigned int l)
 
 	if (!h || !*h)
 	{
-		fprintf(stderr, "L%d: can't pint, stack empty\n", l);
+		fprintf(stderr, "L%d: can't pop an empty stack\n", l);
 		free_stack(*h);
 		exit(EXIT_FAILURE);
 	}
