@@ -16,6 +16,7 @@ void execute(stack_t **h, char *line, unsigned int line_number)
 		{NULL, NULL}
 	};
 	int i;
+
 	if (strcmp(line, "push") == 0)
 	{
 		push(h, line, line_number);
@@ -25,7 +26,6 @@ void execute(stack_t **h, char *line, unsigned int line_number)
 	{
 		for (i = 0; instr[i].opcode != NULL; i++)
 		{
-			
 			if (strcmp(line, instr[i].opcode) == 0)
 			{
 				instr[i].f(h, line_number);
@@ -33,7 +33,7 @@ void execute(stack_t **h, char *line, unsigned int line_number)
 			}
 		}
 	}
-	fprintf(stderr,"L%d: unknown instruction %s\n", line_number, line);
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, line);
 	free_stack(*h);
 	*h = NULL;
 	exit(EXIT_FAILURE);

@@ -14,12 +14,9 @@ char *skip_spaces(char *s)
 
 	while (*s && *s == ' ')
 		++s;
-  
 	if ((*s) == '\t' || (*s) == '\n' || (*s) == '\0')
-	{ 
 		return (NULL);
-	}                           
-	copy = strdup(s);                    
+	copy = strdup(s);
 	token = strtok(copy, " ");
 	return (token);
 }
@@ -36,20 +33,16 @@ char *reach_number(char *s)
 
 	if (!s)
 		return (NULL);
-	
 	copy = strtok(NULL, " \n\t");
 
 	if (copy == NULL)
 		return (NULL);
 
 	num =  strdup(copy);
-	
 	while (*num && !(*num < '0' || *num > '9'))
 		num++;
 
 	if (*num != '\n' && *num != '\0' && *num != '-')
-		return (NULL);	
-	
-		
+		return (NULL);
 	return (copy);
 }

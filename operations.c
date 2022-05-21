@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
-* swap - removes the top element of the stack
+* add - add a node to the top of the stack
 * @h: pointer to head to stack
 * @l: value of the line
 */
@@ -66,7 +66,7 @@ void sub(stack_t **h, unsigned int l)
 	free(temp);
 }
 /**
-* mod - divides the second top element of the stack by the top element 
+* mod - divides the second top element of the stack by the top element
 * @h: pointer to head to stack
 * @l: value of the line
 */
@@ -105,7 +105,7 @@ void mod(stack_t **h, unsigned int l)
 	free(temp);
 }
 /**
-* mul - muntiplis the second top element of the stack by the top element 
+* mul - muntiplis the second top element of the stack by the top element
 * @h: pointer to head to stack
 * @l: value of the line
 */
