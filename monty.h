@@ -20,7 +20,6 @@ typedef struct stack_s
         struct stack_s *prev;
         struct stack_s *next;
 } stack_t;
-
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -42,6 +41,9 @@ void pint(stack_t **head, unsigned int l);
 void pop(stack_t **h, unsigned int l);
 void swap(stack_t **h, unsigned int l);
 void add(stack_t **h, unsigned int l);
+void sub(stack_t **h, unsigned int l);
+void mod(stack_t **h, unsigned int l);
+void mul(stack_t **h, unsigned int l);
 void nop(stack_t **h, unsigned int l);
 stack_t *remove_node(stack_t **h);
 char *skip_spaces(char *s);

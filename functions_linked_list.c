@@ -33,7 +33,7 @@ stack_t *add_node(stack_t **h, const int n)
 stack_t *remove_node(stack_t **h)
 {
 	stack_t *temp;
-
+	
 	if ((*h)->next == NULL && (*h)->prev == NULL)
 		(*h) = NULL;
 	else 
