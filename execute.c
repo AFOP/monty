@@ -13,18 +13,8 @@ void execute(stack_t **h, char *line, unsigned int line_number)
 		{"add", add}, {"nop", nop},
 		{NULL, NULL}
 	};
-	int i;	
-	char *start_c;
-		
-	start_c = strtok(line, " \n\t");
-	printf("Error");
-	printf("%s", start_c);
-	if (start_c == NULL)
-	{
-		free(line);
-		return;
-	}
-	if (strcmp(start_c, "push") == 0)
+	int i;
+	if (strcmp(line, "push") == 0)
 	{
 		push(h, line, line_number);
 		return;
@@ -34,17 +24,14 @@ void execute(stack_t **h, char *line, unsigned int line_number)
 		for (i = 0; instr[i].opcode != NULL; i++)
 		{
 			
-			if (strcmp(start_c, instr[i].opcode) == 0)
+			if (strcmp(line, instr[i].opcode) == 0)
 			{
-				
-				free(line);
 				instr[i].f(h, line_number);
 				return;
 			}
 		}
 	}
-	fprintf(stderr,"L%d: unknown instruction %s\n", line_number, start_c);
-	free(line);
+	fprintf(stderr,"L%d: unknown instruction %s\n", line_number, line);
 	free_stack(*h);
 	*h = NULL;
 	exit(EXIT_FAILURE);

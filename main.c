@@ -8,9 +8,9 @@
 int main(int argc, char **argv)
 {
 	unsigned int line_number = 0;
-	char *line_c;
+	char *line_c , *copy, *token;
 	size_t size_l;
-	ssize_t status;
+	ssize_t status =0;
 	stack_t *h = NULL;
 	FILE *fp;
 
@@ -34,9 +34,12 @@ int main(int argc, char **argv)
 		if (status > 0)
 		{
 			line_number++;
-			execute(&h, line_c, line_number);
+			copy = strdup(line_c);
+			token = strtok(copy, " \n\t");
+			if (token == NULL)
+				continue;
+			execute(&h, token, line_number);
 		}
-		
 	}
 	free(line_c);
 	fclose(fp);

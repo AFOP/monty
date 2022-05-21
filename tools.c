@@ -32,20 +32,21 @@ char *skip_spaces(char *s)
  */
 char *reach_number(char *s)
 {
-	char *num;
+	char *num, *copy;
 
 	if (!s)
 		return (NULL);
 	
-	num = strtok(s, " ");
-	num = strtok(NULL, " ");
+	copy = strtok(NULL, " \n\t");
+	num =  strdup(copy);
+	printf("%s\n", num);
 
-	while (*num && (*num < '0' || *num > '9'))
-		++num;  
+	while (*num && !(*num < '0' || *num > '9'))
+		num++;
 
-	if ((*num) == '\n' || (*num) == '\0')
-	{ 
-		return (NULL);
-	}
-	return (num);
+	if (*num != '\0')
+		return (NULL);	
+	
+		
+	return (copy);
 }

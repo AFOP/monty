@@ -30,7 +30,7 @@ void pint(stack_t **head, unsigned int l)
 
 	if (!head || !*head)
 	{
-		printf("L%d: can't pint, stack empty\n", l);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", l);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
