@@ -38,12 +38,16 @@ char *reach_number(char *s)
 		return (NULL);
 	
 	copy = strtok(NULL, " \n\t");
+
+	if (copy == NULL)
+		return (NULL);
+
 	num =  strdup(copy);
 	
 	while (*num && !(*num < '0' || *num > '9'))
 		num++;
 
-	if (*num != '\0')
+	if (*num != '\n' && *num != '\0' && *num != '-')
 		return (NULL);	
 	
 		
