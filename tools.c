@@ -39,8 +39,7 @@ char *reach_number(char *s)
 	
 	copy = strtok(NULL, " \n\t");
 	num =  strdup(copy);
-	printf("%s\n", num);
-
+	
 	while (*num && !(*num < '0' || *num > '9'))
 		num++;
 
