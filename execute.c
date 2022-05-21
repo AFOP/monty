@@ -17,6 +17,8 @@ void execute(stack_t **h, char *line, unsigned int line_number)
 	};
 	int i;
 
+	if (strncmp(line, "#", strlen("#")) == 0)
+		return;
 	if (strcmp(line, "push") == 0)
 	{
 		push(h, line, line_number);
