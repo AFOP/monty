@@ -70,7 +70,7 @@ void sub(stack_t **h, unsigned int l)
 * @h: pointer to head to stack
 * @l: value of the line
 */
-void mod(stack_t **h, unsigned int l)
+void divi(stack_t **h, unsigned int l)
 {
 	stack_t *temp;
 	int mod;
@@ -132,6 +132,40 @@ void mul(stack_t **h, unsigned int l)
 	}
 	(*h) = (*h)->next;
 	(*h)->n *= mul;
+	temp->next = NULL;
+	(*h)->prev = NULL;
+	free(temp);
+}
+void mod(stack_t **h, unsigned int l)
+{
+	stack_t *temp;
+	int mod;
+
+	if (!h || !*h)
+	{
+		fprintf(stderr, "L%d: can't mod, stack too short\n", l);
+		free_stack(*h);
+		exit(EXIT_FAILURE);
+	}
+
+	if ((*h)->n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", l);
+		free_stack(*h);
+		exit(EXIT_FAILURE);
+	}
+
+	mod = (*h)->n;
+	temp = *h;
+
+	if ((*h)->next == NULL)
+	{
+		fprintf(stderr, "L%d: can't mod, stack too short\n", l);
+		free_stack(*h);
+		exit(EXIT_FAILURE);
+	}
+	(*h) = (*h)->next;
+	(*h)->n %= mod;
 	temp->next = NULL;
 	(*h)->prev = NULL;
 	free(temp);

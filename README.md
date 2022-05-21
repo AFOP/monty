@@ -1,37 +1,98 @@
-# Stacks, Queues - LIFO, FIFO - Monty
+# :scroll: Monty Interpreter
 
-This folder :file_folder: contains the Monty project done in low-level programming in C, as part of the curriculum of :point_right: **[Holberton School](https://www.holbertonschool.com/)** :blue_book::computer:.
-![c image](https://setscholars.net/wp-content/uploads/2020/07/C-Programming.jpg)
+Description: Monty 0.98 is a scripting language that is first compiled into Monty byte codes (Just like Python). It relies on a unique stack, with specific instructions to manipulate it. The goal of this project is to create an interpreter for Monty ByteCodes files.
 
-## Topic: Monty Simulator 0.98
-* Description: Monty 0.98 is a scripting language that is first compiled into Monty byte codes (Just like Python). It relies on a unique stack, with specific instructions to manipulate it. The goal of this project is to create an interpreter for Monty ByteCodes files.
-* Files containing Monty byte codes usually have the .m extension. Most of the industry uses this standard but it is not required by the specification of the language. There is not more than one instruction per line. There can be any number of spaces before or after the opcode and its argument:
+## :running: Getting Started
+
+* [Ubuntu 14.04 LTS](http://releases.ubuntu.com/14.04/) - Operating system reqd.
+
+* [GCC 4.8.4](https://gcc.gnu.org/gcc-4.8/) - Compiler used
+
+## :warning: Prerequisites
+
+* Must have `git` installed.
+
+* Must have repository cloned.
+
 ```
-julien@ubuntu:~/monty$ cat -e bytecodes/000.m
-push 0$
-push 1$
-push 2$
-  push 3$
-                   pall    $
-push 4$
-    push 5    $
-      push    6        $
-pall$
+$ sudo apt-get install git
+```
+
+## :arrow_down: Installing and Using
+
+Clone the repository into a new directory:
+
+```
+$ git clone https://github.com/AFOP/monty.git
+```
+Compile with the following:
+
+```
+gcc -Wall -Werror -Wextra -pedantic *.c -o monty
+```
+
+Run the interpreter on a file:
+
+```
+./monty name_file.m
+```
+
+Into the file .m:
+
+```
+julien@ubuntu:~/monty$ cat bytecodes/000.m
+push 0
+push 1
+push 2
+  push 3
+                   pall    
+push 4
+    push 5    
+      push    6        
+pall
 julien@ubuntu:~/monty$
 ```
-## Technologies :hammer:
-* Scripts written in Bash 4.3.11
-* C files are compiled using:
-```
-gcc -g -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o monty
-```
-* C files are written according to the C90 and C89 standard
-* Tested on Ubuntu 20.04 LTS
+## :wrench: Monty Opcodes
 
-## Project list
-| Project name | Description |
-| ------------ | ----------- |
-| [`0x19. C - Stacks, Queues - LIFO, FIFO`](https://github.com/AFOP/monty) | Monty Simulator 0.98 ( Comands: push, pall, nop, sub, mod, div, pint, swap, mul, div), and compilation process with gcc in **C language** | ©
+* **push**
+  * Usage: `push <int>`
+  * Pushes an element to the stack.
+  * The parameter `<int>` must be an integer.
+
+* **pall**
+  * Prints all values in the stack/queue, starting from the top.
+
+* **pint**
+  * Prints the top value of the stack/queue.
+
+* **pop**
+  * Removes the top element of the stack/queue.
+
+* **swap**
+  * Swaps the top two elements of the stack/queue.
+
+* **nop**
+  * Does not do anything.
+
+* **add**
+  * Adds the top two elements of the stack/queue.
+  * The result is stored in the second element from the top and the top element is popped.
+
+* **sub**
+  * Subtracts the top element of the stack/queue from the second element from the top.
+  * The result is stored in the second element from the top and the top element is removed.
+
+* **mul**
+  * Multiplies the top two elements of the stack/queue.
+  * The result is stored in the second element from the top and the top element is removed.
+
+* **div**
+  * Divides the second element from the top of the stack/queue by the top element.
+  * The result is stored in the second element from the top and the top element is removed.
+
+* **mod**
+  * Computes the modulus of the second element from the top of the stack/queue divided by the top element.
+  * The result is stored in the second element from the top and the top element is removed.
 
 ## AUTHORS
 * **Andrés Ocaña** - *Documentación* - [AFOP](https://github.com/afop)  

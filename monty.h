@@ -41,8 +41,9 @@ stack_t *remove_node(stack_t **h);
 /*in operations.c*/
 void add(stack_t **h, unsigned int l);
 void sub(stack_t **h, unsigned int l);
-void mod(stack_t **h, unsigned int l);
+void divi(stack_t **h, unsigned int l);
 void mul(stack_t **h, unsigned int l);
+void mod(stack_t **h, unsigned int l);
 /*in other_instructions.c*/
 void pall(stack_t **head, unsigned int l);
 void pint(stack_t **head, unsigned int l);
