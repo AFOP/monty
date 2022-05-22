@@ -58,7 +58,7 @@ void rotl(stack_t **head, unsigned int l)
 	stack_t *tail;
 	(void)l;
 
-	if ((*head)->next == NULL || (*head)->next->next == NULL)
+	if ((*head)->next == NULL)
 		return;
 
 	top = tail = (*head)->next;
