@@ -34,11 +34,11 @@ void pstr(stack_t **head, unsigned int l)
 
 	temp = *head;
 
-	while (temp)
+	while (temp != NULL)
 	{
 		if (temp->n == 0)
 			break;
-		if (temp->n <= 0 || temp->n > 255)
+		if (temp->n <= 32 || temp->n > 126)
 			break;
 		printf("%c", temp->n);
 		temp = temp->next;
