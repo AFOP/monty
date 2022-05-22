@@ -39,11 +39,10 @@ int main(int argc, char **argv)
 			if (token == NULL)
 				continue;
 			execute(&h, token, line_number);
-			free(copy);
 		}
 	}
-	free(line_c);
 	fclose(fp);
 	free_stack(h);
+	free(copy);
 	return (0);
 }
