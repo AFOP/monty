@@ -34,6 +34,8 @@ void pstr(stack_t **head, unsigned int l)
 
 	temp = *head;
 
+	if (!temp)
+		return;
 	while (temp != NULL)
 	{
 		if (temp->n == 0)
