@@ -21,9 +21,6 @@ char *reach_number(char *s)
 		num++;
 
 	if (*num != '\n' && *num != '\0' && *num != '-')
-	{
-		free(num);
 		return (NULL);
-	}
 	return (copy);
 }
