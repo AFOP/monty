@@ -51,6 +51,10 @@ void pall(stack_t **head, unsigned int l);
 void pint(stack_t **head, unsigned int l);
 void pop(stack_t **h, unsigned int l);
 void swap(stack_t **h, unsigned int l);
+/*in instructions.c*/
+void pchar(stack_t **head, unsigned int l);
+void pstr(stack_t **head, unsigned int l);
+void rotl(stack_t **head, unsigned int l);
 /*in push and nop.c*/
 void push(stack_t **h, char *line, unsigned int line_number);
 void nop(stack_t **h, unsigned int l);

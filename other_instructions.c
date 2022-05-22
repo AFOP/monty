@@ -61,7 +61,6 @@ void pop(stack_t **h, unsigned int l)
 		free(nodo);
 		exit(EXIT_FAILURE);
 	}
-	free(nodo);
 }
 /**
 * swap - removes the top element of the stack

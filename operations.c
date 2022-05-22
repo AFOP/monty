@@ -66,7 +66,7 @@ void sub(stack_t **h, unsigned int l)
 	free(temp);
 }
 /**
-* mod - divides the second top element of the stack by the top element
+* divi - divides the second top element of the stack by the top element
 * @h: pointer to head to stack
 * @l: value of the line
 */
@@ -136,6 +136,11 @@ void mul(stack_t **h, unsigned int l)
 	(*h)->prev = NULL;
 	free(temp);
 }
+/**
+* mod - mod the second top element of the stack by the top element
+* @h: pointer to head to stack
+* @l: value of the line
+*/
 void mod(stack_t **h, unsigned int l)
 {
 	stack_t *temp;

@@ -13,6 +13,8 @@ void execute(stack_t **h, char *line, unsigned int line_number)
 		{"add", add}, {"nop", nop},
 		{"sub", sub}, {"div", divi},
 		{"mul", mul}, {"mod", mod},
+		{"pchar", pchar}, {"pstr", pstr},
+		{"rotl", rotl},
 		{NULL, NULL}
 	};
 	int i;
