@@ -36,6 +36,7 @@ int main(int argc, char **argv)
 			line_number++;
 			copy = strdup(line_c);
 			token = strtok(copy, " \n\t");
+			
 			if (token == NULL)
 				continue;
 			execute(&h, token, line_number);
@@ -43,6 +44,5 @@ int main(int argc, char **argv)
 	}
 	fclose(fp);
 	free_stack(h);
-	free(copy);
 	return (0);
 }

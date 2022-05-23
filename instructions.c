@@ -34,8 +34,6 @@ void pstr(stack_t **head, unsigned int l)
 
 	temp = *head;
 
-	if (!temp)
-		return;
 	while (temp != NULL)
 	{
 		if (temp->n == 0)
@@ -58,6 +56,9 @@ void rotl(stack_t **head, unsigned int l)
 	stack_t *tail;
 	(void)l;
 
+	if (!head || !*head)
+		return;
+	
 	if ((*head)->next == NULL)
 		return;
 
