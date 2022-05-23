@@ -12,9 +12,9 @@ int main(int argc, char **argv)
 	size_t size_l;
 	ssize_t status = 0;
 	stack_t *h = NULL;
-	FILE *fp;
+	FILE *fp = NULL;
 
-	if (argc != 2)
+	if (argc != 2 || getsubopt(argv, ":m") == -1)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
