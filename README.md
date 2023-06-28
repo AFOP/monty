@@ -1,6 +1,6 @@
 # :scroll: Monty Interpreter
 
-![Logo Monty Interpreter](https://github.com/AFOP/monty/tree/main/img)
+![Logo Monty Interpreter](https://github.com/AFOP/monty/img/monty.jpg)
 
 Description: Monty 0.98 is a scripting language that is first compiled into Monty byte codes (Just like Python). It relies on a unique stack, with specific instructions to manipulate it. The goal of this project is to create an interpreter for Monty ByteCodes files.
 
@@ -95,6 +95,10 @@ julien@ubuntu:~/monty$
 * **mod**
   * Computes the modulus of the second element from the top of the stack/queue divided by the top element.
   * The result is stored in the second element from the top and the top element is removed.
+
+## Description author 
+I am a systems engineer from Colombia and I like software development
+🌱 I’m currently learning Laravel, bootstrap, MySQL
 
 ## AUTHORS
 * **Andrés Ocaña** 
