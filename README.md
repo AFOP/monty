@@ -1,5 +1,7 @@
 # :scroll: Monty Interpreter
 
+![Logo Monty Interpreter](https://ejemplo.com/imagen.png)
+
 Description: Monty 0.98 is a scripting language that is first compiled into Monty byte codes (Just like Python). It relies on a unique stack, with specific instructions to manipulate it. The goal of this project is to create an interpreter for Monty ByteCodes files.
 
 ## :running: Getting Started
@@ -95,4 +97,6 @@ julien@ubuntu:~/monty$
   * The result is stored in the second element from the top and the top element is removed.
 
 ## AUTHORS
-* **Andrés Ocaña** - *Documentación* - [AFOP](https://github.com/afop)  
+* **Andrés Ocaña** 
+- *GitHub*  - [AFOP](https://github.com/afop)
+- *Twitter* - [@AfopOcana](https://twitter.com/AfopOcana)
